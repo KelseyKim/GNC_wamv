@@ -1,0 +1,8 @@
+prefix=/home/ktkim/Workspaces/GNC_wamv/devel
+
+Name: heron_control
+Description: Description of heron_control
+Version: 0.3.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

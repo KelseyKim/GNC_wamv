@@ -1,0 +1,8 @@
+prefix=/home/ktkim/Workspaces/GNC_wamv/devel
+
+Name: heron_msgs
+Description: Description of heron_msgs
+Version: 0.3.4
+Cflags: -I/home/ktkim/Workspaces/GNC_wamv/devel/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

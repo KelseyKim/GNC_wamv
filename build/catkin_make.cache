@@ -1,0 +1,2 @@
+guidance:navigation
+-DCATKIN_DEVEL_PREFIX=/home/ktkim/Workspaces/GNC_wamv/devel -DCMAKE_INSTALL_PREFIX=/home/ktkim/Workspaces/GNC_wamv/install -G Unix Makefiles

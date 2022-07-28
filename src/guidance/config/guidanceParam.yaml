@@ -1,0 +1,3 @@
+r_los: 25       #m
+desired_speed: .5    #m/s
+switch_radius: 10   #m

@@ -1,0 +1,2 @@
+set(heron_msgs_MESSAGE_FILES "/home/ktkim/Workspaces/GNC_wamv/src/heron/heron_msgs/msg/Course.msg;/home/ktkim/Workspaces/GNC_wamv/src/heron/heron_msgs/msg/Drive.msg;/home/ktkim/Workspaces/GNC_wamv/src/heron/heron_msgs/msg/Helm.msg;/home/ktkim/Workspaces/GNC_wamv/src/heron/heron_msgs/msg/Sense.msg;/home/ktkim/Workspaces/GNC_wamv/src/heron/heron_msgs/msg/Status.msg")
+set(heron_msgs_SERVICE_FILES "")

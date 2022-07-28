@@ -1,0 +1,29 @@
+<launch>
+  <!-- <node name="rosbag_play" pkg="rosbag" type="play" args="/home/ktkim/Desktop/20210715_1000minus1000.bag" output="screen"/> -->
+  <!-- <node name="rosbag_play" pkg="rosbag" type="play" args="/home/ktkim/Desktop/20210715_minus10001000.bag" output="screen"/> -->
+  <!-- <node name="rosbag_play" pkg="rosbag" type="play" args="/home/ktkim/Desktop/20210715_towardsShore1000.bag" output="screen"/> -->
+  <!-- <node name="rosbag_play" pkg="rosbag" type="play" args="/home/ktkim/Desktop/20210715_5001000.bag" output="screen"/> -->
+  <node name="rosbag_play" pkg="rosbag" type="play" args="/home/ktkim/Desktop/20210715_1000500.bag" output="screen"/>
+
+  <!-- <node name="wamv_simulator" pkg="navigation" type="wamvSim.py" /> -->
+
+
+  <rosparam command="load" file="$(find navigation)/config/baseParameters.yaml" />
+  <rosparam command="load" file="$(find navigation)/config/kalmanParameters.yaml" />
+  <rosparam command="load" file="$(find navigation)/config/sensors.yaml" />
+
+
+  <node name="wrench_topic_publisher" pkg="navigation" type="wrench_topic.py" />
+  <node name="diff_gps_heading_publisher" pkg="navigation" type="heading.py" output="screen" />
+
+  <node name="kalman_filter_node" pkg="navigation" type="kalman_ros.py" output="screen">
+    <!-- Subscribers -->
+    <!-- <remap from="/sensors/imu/data" to="/imu/data"/> -->
+    <!-- <remap from="/gps/fix" to="/navsat/fix"/> -->
+    <remap from="/wrench" to="/kalman/wrench"/>
+    <!-- Publishers -->
+    <!-- <remap from="/kalman/filtered_ned" to="/ned/filtered"/> -->
+    <!-- <remap from="/kalman/filtered_gps" to="/lla/filtered"/> -->
+  </node>
+
+</launch>

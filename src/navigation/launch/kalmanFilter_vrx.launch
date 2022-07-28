@@ -1,0 +1,27 @@
+<launch>
+  <!-- <node pkg="rosbag" type="play" name="rosbagplay" args="/home/ktkim/Desktop/10001000_rl.bag" output="screen"/> -->
+  <!-- <node pkg="rosbag" type="play" name="rosbagplay" args="/home/ktkim/Desktop/5001000.bag" output="screen"/> -->
+  <node pkg="rosbag" type="play" name="rosbagplay" args="/home/ktkim/Desktop/sinusoid_vrxgt.bag"/>
+
+
+  <rosparam command="load" file="$(find navigation)/config/baseParameters.yaml" />
+  <rosparam command="load" file="$(find navigation)/config/kalmanParameters_vrx.yaml" />
+  <rosparam command="load" file="$(find navigation)/config/sensors_vrx.yaml" />
+
+  <node name="wrench_topic_publisher" pkg="navigation" type="wrench_topic_vrx.py" />
+
+  <node name="kalman_filter_node" pkg="navigation" type="kalman_ros_vrx.py" output="screen">
+    <!-- Subscribers -->
+    <!-- <remap from="/sensors/imu/data" to="/imu/data"/> -->
+    <!-- <remap from="/gps/fix" to="/navsat/fix"/> -->
+    <remap from="/wrench" to="/kalman/wrench"/>
+    <!-- Publishers -->
+    <!-- <remap from="/kalman/filtered_ned" to="/ned/filtered"/> -->
+    <!-- <remap from="/kalman/filtered_gps" to="/lla/filtered"/> -->
+  </node>
+
+  <node name="publish_tuning" pkg="navigation" type="publishTopics.py" />
+
+
+
+</launch>

@@ -1,0 +1,6 @@
+#! /usr/bin/env python2
+
+from bagpy import bagreader
+
+b = bagreader('./5001000.bag')
+bmesg = b.message_by_topic('/odom')

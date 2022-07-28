@@ -1,0 +1,8 @@
+<launch>
+
+  <rosparam command="load" file="$(find guidance)/config/baseParameters.yaml" />
+  <rosparam command="load" file="$(find guidance)/config/guidanceParam.yaml" />
+
+  <node name="los_guidance_node" pkg="guidance" type="lineOfSight_ros.py" />
+
+</launch>

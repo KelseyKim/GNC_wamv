@@ -1,0 +1,8 @@
+prefix=/home/ktkim/Workspaces/GNC_wamv/install
+
+Name: heron_description
+Description: Description of heron_description
+Version: 0.3.4
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

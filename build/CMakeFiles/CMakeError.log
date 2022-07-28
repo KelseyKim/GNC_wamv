@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_46a42/fast"
+/usr/bin/make -f CMakeFiles/cmTC_46a42.dir/build.make CMakeFiles/cmTC_46a42.dir/build
+make[1]: Entering directory '/home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_46a42.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_46a42.dir/CheckSymbolExists.c.o   -c /home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_46a42
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46a42.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_46a42.dir/CheckSymbolExists.c.o  -o cmTC_46a42 
+CMakeFiles/cmTC_46a42.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_46a42.dir/build.make:97: recipe for target 'cmTC_46a42' failed
+make[1]: *** [cmTC_46a42] Error 1
+make[1]: Leaving directory '/home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_46a42/fast' failed
+make: *** [cmTC_46a42/fast] Error 2
+
+File /home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_22dfe/fast"
+/usr/bin/make -f CMakeFiles/cmTC_22dfe.dir/build.make CMakeFiles/cmTC_22dfe.dir/build
+make[1]: Entering directory '/home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_22dfe.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_22dfe.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_22dfe
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22dfe.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_22dfe.dir/CheckFunctionExists.c.o  -o cmTC_22dfe -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_22dfe.dir/build.make:97: recipe for target 'cmTC_22dfe' failed
+make[1]: *** [cmTC_22dfe] Error 1
+make[1]: Leaving directory '/home/ktkim/Workspaces/GNC_wamv/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_22dfe/fast' failed
+make: *** [cmTC_22dfe/fast] Error 2
+
+
